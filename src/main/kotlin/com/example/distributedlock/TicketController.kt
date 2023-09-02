@@ -16,7 +16,7 @@ class TicketController(
 
     @PostMapping
     fun create(): ResponseEntity<String> {
-        val result = ticketService.createTicketWithSpinLock()
+        val result = ticketService.createTicketWithRedisson()
         logger.info(result)
         return ResponseEntity.ok(result)
     }
